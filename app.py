@@ -1,8 +1,5 @@
-
-import osimport streamlit as st
 import os
-import random
-import datetime
+import streamlit as st
 
 st.title("🚀 اهلا بيك في موقعي")
 st.write("ده اول موقع ليا باستخدام Streamlit")
