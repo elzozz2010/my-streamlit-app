@@ -1,12 +1,29 @@
 import  os
 import streamlit as st
 import random
+st.set_page_config(page_title="الستور بتاعي", layout="wide")
+
+dark_mode = st.toggle("🌙 الوضع الليلي / ☀️ الوضع الساطع", value=False)
+
+if dark_mode:
+    bg_color = "#0E1117"
+    text_color = "#FAFAFA"
+    primary_color = "#FF4B4B"
+else:
+    bg_color = "#FFFFFF"
+    text_color = "#000000"
+    primary_color = "#0066CC"
 st.title("🚀 اهلا بيك في موقعي")
 st.write("ده اول موقع ليا باستخدام Streamlit")
 
 # 2. سؤال الاسم + التفاعل
 name = st.text_input("اكتب اسمك")
 if name:
+    fav_color = st.color_picker("اختار لونك المفضل", "#00f900")
+
+if name:
+    st.write(f"اهلا {name} 👋")
+    st.markdown(f"<h3 style='color:{fav_color}'>ده اللون اللي انت اخترته</h3>", unsafe_allow_html=True)
     st.write(f"اهلا {name} 👋 نورت الموقع")
 else:
     st.warning("اكتب اسمك الاول")
@@ -86,18 +103,7 @@ if st.button("دوس وارمي الزهر 🎲", use_container_width=True, type
     st.markdown(f"<h1 style='text-align:center; font-size:120px; color:#FF4B4B'>{dice_emojis[roll-1]}</h1>", unsafe_allow_html=True)
     st.markdown(f"<h2 style='text-align:center'>طلعلك: {roll}</h2>", unsafe_allow_html=True)
 
-st.set_page_config(page_title="الستور بتاعي", layout="wide")
 
-dark_mode = st.toggle("🌙 الوضع الليلي / ☀️ الوضع الساطع", value=False)
-
-if dark_mode:
-    bg_color = "#0E1117"
-    text_color = "#FAFAFA"
-    primary_color = "#FF4B4B"
-else:
-    bg_color = "#FFFFFF"
-    text_color = "#000000"
-    primary_color = "#0066CC"
 
 st.markdown(f"""
     <style>
