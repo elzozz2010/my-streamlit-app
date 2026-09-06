@@ -21,7 +21,7 @@ if name:
     fav_color = st.color_picker("اختار لونك المفضل", "#00f900")
 
 if name:
-    st.write(f"اهلا {name} 👋")
+    st.write(f".اهلا {name} 👋")
     st.markdown(f"<h3 style='color:{fav_color}'>ده اللون اللي انت اخترته</h3>", unsafe_allow_html=True)
     st.write(f"اهلا {name} 👋 نورت الموقع")
 else:
