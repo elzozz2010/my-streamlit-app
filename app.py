@@ -122,7 +122,7 @@ for y in range(GRID_SIZE):
             color = "red"
         else:
             color = "#
-          grid_html += f"<div style='width:20px; height:20px; background:{color};'></div>"
+            grid_html += f"<div style='width:20px; height:20px; background:{color};'></div>"
 grid_html += "</div>"
 st.markdown(grid_html, unsafe_allow_html=True)
 st.write(f"### النقاط: {st.session_state.score}")
