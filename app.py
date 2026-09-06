@@ -1,4 +1,5 @@
 import  os
+import time
 import streamlit as st
 import random
 st.set_page_config(page_title="اهلا بيك في موقعي", layout="wide")
@@ -143,7 +144,6 @@ if st.session_state.game_over:
     if st.button("اعادة اللعب"):
         st.session_state.snake = [[10, 10]]
         st.session_state.direction = "RIGHT"
-
 [random.randint(0, GRID_SIZE-1), random.randint(0, GRID_SIZE-1)]
         st.session_state.score = 0
         st.session_state.game_over = False
