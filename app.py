@@ -115,15 +115,15 @@ st.markdown(f"""
 
 grid_html = "<div style='display: grid; grid-template-columns: repeat(20, 20px); gap: 1px; background: black; padding: 5px;'>"
 for y in range(GRID_SIZE):
-for x in range(GRID_SIZE):
+    for x in range(GRID_SIZE):
         if [x, y] in st.session_state.snake:
             color = "limegreen"
         elif [x, y] == st.session_state.apple:
             color = "red"
         else:
             color = "#222"
-        grid_html += f"<div style='width:20px; height:20px; background:{color};'></div>"
-        grid_html += "</div>"
+    grid_html += f"<div style='width:20px; height:20px; background:{color};'></div>"
+grid_html += "</div>"
 
 st.markdown(grid_html, unsafe_allow_html=True)
 st.write(f"### النقاط: {st.session_state.score}")
