@@ -2,18 +2,28 @@ import  os
 import time
 import streamlit as st
 import random
+import time
 st.set_page_config(page_title="اهلا بيك في موقعي", layout="wide")
 
-dark_mode = st.toggle("🌙 الوضع الليلي / ☀️ الوضع الساطع", value=False)
+dark_mode = st.toggle("🌙 الوضع الليلي / الوضع الصباح ☀️", value=False)
 
 if dark_mode:
     bg_color = "#0E1117"
-    text_color = "#FAFAFA"
+    text_color = "#FA"
     primary_color = "#FF4B4B"
 else:
     bg_color = "#FFFFFF"
-text_color = "000000" # <--
-primary_color = "#0066CC"
+    text_color = "#000000"
+    primary_color = "#FF4B4B"
+
+st.markdown(f"""
+<style>
+.stApp {{
+    background-color: {bg_color};
+    color: {text_color};
+}}
+</style>
+""", unsafe_allow_html=True)
 st.title("🚀 اهلا بيك في موقعي")
 st.write ("اهلا بيك في الموقع", "streamlit")
 GRID_SIZE = 20
