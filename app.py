@@ -121,8 +121,8 @@ for y in range(GRID_SIZE):
         elif [x, y] == st.session_state.apple:
             color = "red"
         else:
-            color = "#222"
-              grid_html += f"<div style='width:20px; height:20px; background:{color};'></div>"
+            color = "#
+grid_html += f"<div style='width:20px; height:20px; background:{color};'></div>"
 grid_html += "</div>"
 st.markdown(grid_html, unsafe_allow_html=True)
 st.write(f"### النقاط: {st.session_state.score}")
