@@ -109,7 +109,7 @@ st.markdown(f"""
 
 
     
- [random.randint(0, GRID_SIZE-1), random.randint(0, GRID_SIZE-1)]
+if [random.randint(0, GRID_SIZE-1), random.randint(0, GRID_SIZE-1)]
         else:
             st.session_state.snake.pop()
 
@@ -121,7 +121,7 @@ for y in range(GRID_SIZE):
         elif [x, y] == st.session_state.apple:
             color = "red"
         else:
-            color = "#
+            color = "#222"
 │   │   │   grid_html += f"<div style='width:20px; height:20px; backgr  
 grid_html += "</div>"
 st.markdown(grid_html, unsafe_allow_html=True)
