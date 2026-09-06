@@ -14,7 +14,17 @@ else:
     primary_color = "#0066CC"
 st.title("🚀 اهلا بيك في موقعي")
 st.write ("اهلا بيك في الموقع", "streamlit")
-
+GRID_SIZE = 20
+if 'snake' not in st.session_state:
+    st.session_state.snake = [[10, 10]]
+if 'direction' not in st.session_state:
+    st.session_state.direction = "RIGHT"
+if 'apple' not in st.session_state:
+    st.session_state.apple = [random.randint(0, GRID_SIZE-1), random.randint(0, GRID_SIZE-1)]
+if 'score' not in st.session_state:
+    st.session_state.score = 0
+if 'game_over' not in st.session_state:
+    st.session_state.game_over = False
 # 2. سؤال الاسم + التفاعل
 name = st.text_input("اكتب اسمك")
 if name:
