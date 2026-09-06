@@ -12,7 +12,7 @@ if dark_mode:
 else:
     bg_color = "#FFFFFF"
 text_color = "000000" # <--
-    primary_color = "#0066CC"
+primary_color = "#0066CC"
 st.title("🚀 اهلا بيك في موقعي")
 st.write ("اهلا بيك في الموقع", "streamlit")
 GRID_SIZE = 20
