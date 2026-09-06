@@ -11,6 +11,7 @@ if dark_mode:
     primary_color = "#FF4B4B"
 else:
     bg_color = "#FFFFFF"
+text_color = "000000" # <--
     primary_color = "#0066CC"
 st.title("🚀 اهلا بيك في موقعي")
 st.write ("اهلا بيك في الموقع", "streamlit")
