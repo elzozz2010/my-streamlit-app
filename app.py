@@ -13,7 +13,7 @@ else:
     bg_color = "#FFFFFF"
     primary_color = "#0066CC"
 st.title("🚀 اهلا بيك في موقعي")
-st.write("اهلا بيك في الموقع" Streamlit")
+st.write ("اهلا بيك في الموقع", "streamlit")
 
 # 2. سؤال الاسم + التفاعل
 name = st.text_input("اكتب اسمك")
