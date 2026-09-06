@@ -1,7 +1,7 @@
 import  os
 import streamlit as st
 import random
-st.set_page_config(page_title="الستور بتاعي", layout="wide")
+st.set_page_config(page_title="اهلا بيك في موقعي", layout="wide")
 
 dark_mode = st.toggle("🌙 الوضع الليلي / ☀️ الوضع الساطع", value=False)
 
@@ -11,10 +11,9 @@ if dark_mode:
     primary_color = "#FF4B4B"
 else:
     bg_color = "#FFFFFF"
-    text_color = "#000000"
     primary_color = "#0066CC"
 st.title("🚀 اهلا بيك في موقعي")
-st.write("ده اول موقع ليا باستخدام Streamlit")
+st.write("اهلا بيك في الموقع" Streamlit")
 
 # 2. سؤال الاسم + التفاعل
 name = st.text_input("اكتب اسمك")
@@ -107,6 +106,42 @@ if st.button("دوس وارمي الزهر 🎲", use_container_width=True, type
 
 st.markdown(f"""
     <style>
+
+
+    
+ [random.randint(0, GRID_SIZE-1), random.randint(0, GRID_SIZE-1)]
+        else:
+            st.session_state.snake.pop()
+
+grid_html = "<div style='display: grid; grid-template-columns: repeat(20, 20px); gap: 1px; background: black; padding: 5px;'>"
+for y in range(GRID_SIZE):
+    for x in range(GRID_SIZE):
+        if [x, y] in st.session_state.snake:
+            color = "limegreen"
+        elif [x, y] == st.session_state.apple:
+            color = "red"
+        else:
+            color = "#222"
+        grid_html += f"<div style='width:20px; height:20px; background:{color};'></div>"
+grid_html += "</div>"
+
+st.markdown(grid_html, unsafe_allow_html=True)
+st.write(f"### النقاط: {st.session_state.score}")
+
+if st.session_state.game_over:
+    st.error(f"خسرت! النقاط النهائية: {st.session_state.score}")
+    if st.button("اعادة اللعب"):
+        st.session_state.snake = [[10, 10]]
+        st.session_state.direction = "RIGHT"
+
+[random.randint(0, GRID_SIZE-1), random.randint(0, GRID_SIZE-1)]
+        st.session_state.score = 0
+        st.session_state.game_over = False
+        st.rerun()
+else:
+    time.sleep(0.2)
+    st.rerun()
+
     .stApp {{ background-color: {bg_color}; color: {text_color}; }}
     h1, h2, h3 {{ color: {primary_color}; }}
     </style>
